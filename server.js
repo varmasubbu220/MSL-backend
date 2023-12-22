@@ -6,6 +6,11 @@ app.use(express.json());
 console.log(process.env.PORT)
 app.use(express.urlencoded({ extended: true }));
 const PORT=process.env.PORT
+const cors = require('cors');
+const corsOptions = {
+  origin: "http://localhost:3000",
+};
+app.use(cors(corsOptions));
 app.use('/user',router)
 const Start_connection=()=>{ 
 try{
